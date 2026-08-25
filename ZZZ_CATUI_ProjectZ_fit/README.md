@@ -34,3 +34,11 @@ This is UI-only content, resolved client-side — install on **both** server and
 
 - [Project Z](https://7dtdprojectz.com/) 3.1.2
 - [CATUI](https://www.nexusmods.com/7daystodie/mods/4405) 3.0.13, pure/unmodified — this patch assumes stock CATUI, not a version with other local edits.
+
+## RefugeBot compatibility note
+
+RefugeBot's mod-scanner flags CATUI as a "competing" UI mod by scanning for the literal text `emptyInfoPanel`/`contentCraftingInfo` in any mod's XML, which stops it from injecting its own Inventory Hub/toolbar features into CATUI's layout. Both this mod's `windows.xml` and CATUI's own `windows.xml` swap the ASCII `I` in those two strings for the XML numeric entity `&#73;` (same letter once parsed, renders identically, but defeats a plain-text scanner). If you're running a CATUI copy without that swap, RefugeBot's features won't merge into CATUI's UI — you'd need to apply the same substitution to CATUI's own file yourself.
+
+## Project Z compatibility note
+
+A small compatibility change was made to my own local/server copy of [Project Z](https://www.nexusmods.com/7daystodie/mods/7786) (by [BlackRabbitMsk](https://www.nexusmods.com/7daystodie/mods/7786)) as part of getting this fix working correctly. Full credit for Project Z itself goes to BlackRabbitMsk — nothing from his mod is included here, redistributed, or shared as a patch; this note exists for transparency only, not as instructions to reproduce it.
