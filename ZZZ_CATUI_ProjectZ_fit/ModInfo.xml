@@ -1,0 +1,7 @@
+<xml>
+    <Name value="CATUI_ProjectZ_fit" />
+    <DisplayName value="CATUI_ProjectZ_fit" />
+    <Description value="Repositions/resizes CATUI's rebuilt craftingInfoPanel elements (search tabs, ingredients, stat panel, crafting queue) to fit Project Z's wider layout. Pixel values recovered from the original ZZZ_CATUI_ProjectZ_compatible patch, minus the recipeCraftCountControl-in-preview logic that caused the original NullReferenceException crash (that's fixed properly in Project Z's own file instead, inside itemActions)." />
+    <Author value="MystikIM" />
+    <Version value="1.0.0" />
+</xml>
