@@ -6,32 +6,32 @@
 	     caused the original NullReferenceException crash. The real fix for that control lives in
 	     Project Z's own windows.xml instead (relocated into itemActions). -->
 
-	<append xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']">
+	<append xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']">
 		<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="354,0" width="${parentinnerwidth - 147 - 2 - 214}" height="46" color="[black]" type="sliced" fillcenter="false" />
 	</append>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/@width">180</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/@height">344</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/sprite[@name='backgroundMain']/@width">183</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/sprite[@name='backgroundMain']/@height">347</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/sprite[@name='itemPreview']/@width">154</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/sprite[@name='itemPreview']/@height">154</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/sprite[@name='itemPreview']/@pos">89,-166</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/sprite[@name='itemtypeicon']/@pos">8,-55</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/CATUI_quality_item/@pos">88, -298</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/grid/@cell_width">88</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/grid/@pos">44, -297</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/grid/rect/@width">88</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/sprite[@name='clockIcon']/@pos">45, -314</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='preview']/label[@name='craftingTime']/@pos">75, -315</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/@width">180</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/@height">344</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/sprite[@name='backgroundMain']/@width">183</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/sprite[@name='backgroundMain']/@height">347</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/sprite[@name='itemPreview']/@width">154</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/sprite[@name='itemPreview']/@height">154</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/sprite[@name='itemPreview']/@pos">89,-166</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/sprite[@name='itemtypeicon']/@pos">8,-55</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/CATUI_quality_item/@pos">88, -298</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/grid/@cell_width">88</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/grid/@pos">44, -297</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/grid/rect/@width">88</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/sprite[@name='clockIcon']/@pos">45, -314</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/label[@name='craftingTime']/@pos">75, -315</set>
 
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='searchControls']/@pos">357,0</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='searchControls']/@width">${parentinnerwidth - 147 - 7 - 214}</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='stat']/@width">${parentinnerwidth - 147 - 5 - 214}</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='CATUI_ingredients']/@pos">357,-46</set>
-	<append xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='CATUI_ingredients']">
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='searchControls']/@pos">357,0</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='searchControls']/@width">${parentinnerwidth - 147 - 7 - 214}</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='stat']/@width">${parentinnerwidth - 147 - 5 - 214}</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='CATUI_ingredients']/@pos">357,-46</set>
+	<append xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='CATUI_ingredients']">
 		<sprite depth="3" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="453" height="305" color="[black]" type="sliced" fillcenter="false" />
 	</append>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCraftingInfo']/rect[@name='stat']/@pos">358,-47</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='stat']/@pos">358,-47</set>
 
 	<!-- crafting queue cell sizes -->
 	<set xpath="//window[@name='windowCraftingQueue']/rect[@controller='CraftingQueue']/grid[@name='queue']/@cell_width">80</set>
@@ -50,3 +50,5 @@
 	     instead - likely just cell sizing/positioning, not the element type). -->
 
 </config>
+
+
