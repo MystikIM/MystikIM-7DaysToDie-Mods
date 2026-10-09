@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="MystikIM_KillQuestFix" />
+    <DisplayName value="MystikIM Kill Quest Fix" />
+    <Description value="Fixes V 3.3 crash where finishing or reloading a target_tags kill contract (Project Z contracts, bounty boards) throws a NullReferenceException - no reward paid, or stuck on 'Building environment...'." />
+    <Author value="MystikIM" />
+    <Version value="1.0.0" />
+</xml>

@@ -9,6 +9,7 @@ Original mods for 7 Days To Die, by MystikIM. One repo, one folder per mod — e
 | Mod | What it does |
 | --- | --- |
 | [`ZZZ_CATUI_ProjectZ_fit`](./ZZZ_CATUI_ProjectZ_fit) | Fits Project Z's wider UI panels into CATUI's layout, without editing either mod. Replaces the outdated official compat patch (which reintroduces a real crash). |
+| [`MystikIM_KillQuestFix`](./MystikIM_KillQuestFix) | Fixes a V 3.3 crash where finishing or reloading a `target_tags` kill contract (Project Z contracts, bounty boards) pays no reward or leaves you stuck on "Building environment...". Client-side. |
 
 ## Installing any mod here
 
