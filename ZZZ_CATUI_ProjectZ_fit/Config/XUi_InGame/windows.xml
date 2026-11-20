@@ -3,11 +3,33 @@
 	<!-- Fits Project Z's wider craftingInfoPanel (816 vs vanilla 603) into CATUI's rebuilt layout.
 	     Recovered from the dropped ZZZ_CATUI_ProjectZ_compatible patch's craftingInfoPanel section,
 	     with the recipeCraftCountControl-in-preview append intentionally excluded - that approach
-	     caused the original NullReferenceException crash. The real fix for that control lives in
-	     Project Z's own windows.xml instead (relocated into itemActions). -->
+	     caused the original NullReferenceException crash.
+	     v1.1.0 (2026-11-20, Project Z 3.4.2 + CATUI 3.1.1): the craft-count fix now lives HERE instead
+	     of in a hand-edited Project Z file, so Project Z updates drop in untouched. -->
+
+	<!-- Craft-count control (the x1/x10/max stepper). Project Z puts it inside 'preview', but CATUI
+	     deletes + rebuilds 'preview' without it, and vanilla XUiC_IngredientEntry.Init() then throws a
+	     NullReferenceException on every crafting window. Re-home it as the first cell of the
+	     itemActions list (1 wrapper + 7 action entries = the grid's 8 rows).
+	     (No need to delete Project Z's copy: CATUI removes the whole 'preview' rect, control included.) -->
+	<remove xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/grid[@name='itemActions']/item_action_entry[8]" />
+	<insertBefore xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/grid[@name='itemActions']/item_action_entry[1]">
+		<rect depth="1" name="actions" width="174" height="225">
+			<sprite color="[mediumGrey]" type="sliced" height="45" />
+			<rect name="recipeCraftCountControl" width="147" height="210" pos="14,0" controller="RecipeCraftCount">
+				<button depth="2" name="countDown" style="icon30px, press, held" pos="-10,-20" sprite="ui_game_symbol_arrow_left" pivot="center" sound="[paging_click]" disabledcolor="[lightGrey]" enabled="{enablecountdown}" />
+				<textfield name="count_input" depth="2" pos="7,-6" width="40" height="28" character_limit="4" validation="integer" virtual_keyboard_prompt="vkPromptCount" />
+				<button depth="2" name="countUp" style="icon30px, press, held" pos="64,-20" sprite="ui_game_symbol_arrow_right" pivot="center" sound="[paging_click]" disabledcolor="[lightGrey]" enabled="{enablecountup}" />
+				<button depth="2" name="countMax" style="icon30px, press" pos="96,-20" sprite="ui_game_symbol_arrow_max" pivot="center" sound="[paging_click]" disabledcolor="[lightGrey]" enabled="{enablecountup}" />
+			</rect>
+		</rect>
+	</insertBefore>
+
+	<!-- CATUI strips the description panel's grey filler (it targets height='301'); Project Z 3.4.2 made it 304. -->
+	<remove xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='description']/rect/sprite[@height='304']" />
 
 	<append xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']">
-		<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="354,0" width="${parentinnerwidth - 147 - 2 - 214}" height="46" color="[black]" type="sliced" fillcenter="false" />
+		<sprite depth="8" name="backgroundMain" sprite="menu_empty3px" pos="354,0" width="${parentinnerwidth - 147 - 2 - 205}" height="46" color="[black]" type="sliced" fillcenter="false" />
 	</append>
 	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/@width">180</set>
 	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/@height">344</set>
@@ -25,11 +47,11 @@
 	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='preview']/label[@name='craftingTime']/@pos">75, -315</set>
 
 	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='searchControls']/@pos">357,0</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='searchControls']/@width">${parentinnerwidth - 147 - 7 - 214}</set>
-	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='stat']/@width">${parentinnerwidth - 147 - 5 - 214}</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='searchControls']/@width">${parentinnerwidth - 147 - 7 - 205}</set>
+	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='stat']/@width">${parentinnerwidth - 147 - 5 - 205}</set>
 	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='CATUI_ingredients']/@pos">357,-46</set>
 	<append xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='CATUI_ingredients']">
-		<sprite depth="3" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="453" height="305" color="[black]" type="sliced" fillcenter="false" />
+		<sprite depth="3" name="backgroundMain" sprite="menu_empty3px" pos="-3,3" width="462" height="305" color="[black]" type="sliced" fillcenter="false" />
 	</append>
 	<set xpath="//window[@name='craftingInfoPanel']/rect[@name='contentCrafting&#73;nfo']/rect[@name='stat']/@pos">358,-47</set>
 

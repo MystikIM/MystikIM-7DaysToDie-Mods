@@ -32,8 +32,14 @@ This is UI-only content, resolved client-side — install on **both** server and
 
 ## Requirements
 
-- [Project Z](https://7dtdprojectz.com/) 3.1.2
-- [CATUI](https://www.nexusmods.com/7daystodie/mods/4405) 3.0.13, pure/unmodified — this patch assumes stock CATUI, not a version with other local edits.
+- 7 Days to Die V3.4
+- [Project Z](https://www.nexusmods.com/7daystodie/mods/7786) 3.4.2, **stock/unmodified** (from v1.1.0 on, Project Z needs no local edits)
+- [CATUI](https://www.nexusmods.com/7daystodie/mods/5248) 3.1.1
+
+## Changelog
+
+- **1.1.0** (2026-11-20) — for Project Z 3.4.2 + CATUI 3.1.1. The crafting-count control (x1/x10/max stepper) is now re-homed into the item-actions list by this mod, so Project Z stays stock. Right-hand crafting panels widened to Project Z 3.4.2's 457 px. Removes Project Z 3.4.2's description filler sprite (CATUI targets the old 301 px one). Verified against the game's own merged-config dump: exactly one craft-count control, 8 action rows.
+- **1.0.0** (2026-08-19) — first release, Project Z 3.1.2 + CATUI 3.0.13.
 
 ## RefugeBot compatibility note
 
@@ -41,4 +47,4 @@ RefugeBot's mod-scanner flags CATUI as a "competing" UI mod by scanning for the 
 
 ## Project Z compatibility note
 
-A small compatibility change was made to my own local/server copy of [Project Z](https://www.nexusmods.com/7daystodie/mods/7786) (by [BlackRabbitMsk](https://www.nexusmods.com/7daystodie/mods/7786)) as part of getting this fix working correctly. Full credit for Project Z itself goes to BlackRabbitMsk — nothing from his mod is included here, redistributed, or shared as a patch; this note exists for transparency only, not as instructions to reproduce it.
+Up to v1.0.0, a small compatibility change was made to my own local/server copy of [Project Z](https://www.nexusmods.com/7daystodie/mods/7786) (by [BlackRabbitMsk](https://www.nexusmods.com/7daystodie/mods/7786)) as part of getting this fix working correctly. Full credit for Project Z itself goes to BlackRabbitMsk — nothing from his mod is included here, redistributed, or shared as a patch; this note exists for transparency only, not as instructions to reproduce it.
