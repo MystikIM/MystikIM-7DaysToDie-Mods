@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<Name value="NoZomZAllowed" />
+	<DisplayName value="NoZomZAllowed" />
+	<Description value="Traders are open 24/7 and keep a 50 m safe zone: zombies and animals die inside it and players cannot fight or be hurt there. Unlike older safe-zone mods, tools still work, so you can loot, break boxes and harvest inside the zone. Inspired by jayfusion's Trader Safe Zone Open 24 7." />
+	<Author value="MystikIM" />
+	<Version value="1.0.0" />
+</xml>

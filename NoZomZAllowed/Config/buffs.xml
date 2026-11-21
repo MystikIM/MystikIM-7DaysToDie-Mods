@@ -1,0 +1,23 @@
+<configs>
+	<append xpath="/buffs">
+		<!-- Shown on players inside a trader's 50 m zone; refreshed every 0.1 s by the trader, so it drops 1 s after leaving. -->
+		<buff name="buffMystikSafeZone" name_key="Safe Zone" description_key="Trader safe zone: no fighting and no damage. Tools still work, so loot and break boxes freely." tooltip_key="You entered a Safe Zone" icon="ui_game_symbol_add" icon_color="0,255,0" remove_on_death="true">
+			<stack_type value="replace" />
+			<duration value="1" />
+			<update_rate value=".1" />
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffRemove" action="ShowToolbeltMessage" message_key="You left the Safe Zone" />
+			</effect_group>
+		</buff>
+
+		<!-- Hidden aura on every trader: clears zombies/animals and tags players within 50 m. -->
+		<buff name="buffMystikSafeZoneTrader" hidden="true">
+			<stack_type value="ignore" />
+			<update_rate value=".1" />
+			<effect_group>
+				<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="selfAOE" target_tags="zombie,animal" range="50" stat="Health" operation="subtract" value="99999" />
+				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="selfAOE" target_tags="player" range="50" buff="buffMystikSafeZone" />
+			</effect_group>
+		</buff>
+	</append>
+</configs>

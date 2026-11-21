@@ -1,0 +1,42 @@
+<configs>
+	<append xpath="/entity_classes/entity_class[@name='playerMale']">
+		<effect_group name="MystikIM trader safe zone">
+			<!-- Only WEAPONS are blocked (every weapon carries the weapon or ranged tag).
+			     Tools (pickaxe, axe, shovel, wrench, nailgun, auger, chainsaw...) keep working: loot, break boxes, harvest. -->
+			<passive_effect name="DisableItem" operation="base_set" value="1" tags="weapon,ranged">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+			<!-- Players can't be hurt inside the zone. -->
+			<passive_effect name="GeneralDamageResist" operation="base_add" value="1">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+			<passive_effect name="PhysicalDamageResist" operation="base_add" value="200">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+			<passive_effect name="ElementalDamageResist" operation="base_add" value="200" tags="cold,heat,electrical">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+			<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInfectionCatch,buffInfection01Main,buffInjuryBleeding,buffInjuryBleedingTwo,buffInjuryBleedingBarbedWire,buffLaceration,buffAbrasionCatch,buffArmorShredding,buffDrowning01,buffDrowning02">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+			<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprainedFallTrigger,buffLegBroken,buffArmSprained,buffArmBroken,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffFatiguedTrigger">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+			<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryStunned01,buffInjuryStunned02,buffInjuryStunned03,buffInjuryStunned01CHTrigger,buffInjuryCrippled01,buffInjuryKnockdown01,buffInjuryUnconscious,buffStayDownKO,buffInjuryConcussion,buffShocked">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+			<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffBurningElement,buffBurningEnvironment,buffBurningFlamingArrow,buffBurningMolotov,buffBurning">
+				<requirement name="HasBuff" buff="buffMystikSafeZone" />
+			</passive_effect>
+		</effect_group>
+	</append>
+
+	<!-- Give every trader the safe-zone aura (spawn buff + re-add on load/respawn). Traders have no other Buffs property. -->
+	<append xpath="/entity_classes/entity_class[contains(@name, 'npcTrader')]">
+		<property name="Buffs" value="buffMystikSafeZoneTrader" />
+		<effect_group name="MystikIM trader safe zone aura">
+			<triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="buffMystikSafeZoneTrader" />
+			<triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="buffMystikSafeZoneTrader" />
+		</effect_group>
+	</append>
+</configs>
